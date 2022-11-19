@@ -1,0 +1,45 @@
+body {
+    background-image: url(../images/wavey-fingerprint.svg);
+}
+
+.header-section {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #14071c;
+    box-shadow: inset 0px -16px 67px -33px rgba(255, 255, 255, 0.28);
+
+    z-index: 2;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form__input {
+    display: inline-block;
+    min-width: 200px;
+
+    padding-top: 5px;
+    padding-bottom: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+
+
+    background-color: rgb(215, 230, 255);
+    border: 1px solid rgb(12, 9, 43);
+    border-radius: 2px;
+    outline: none;
+
+    transition: 300ms;
+}
+
+.search-form__input:focus, .search-form__input:hover {
+    background-color: rgb(255, 255, 255);
+}
+

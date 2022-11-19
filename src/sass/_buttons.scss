@@ -1,0 +1,58 @@
+.button {
+    background-color: rgb(137, 146, 153);
+    border: 1px solid rgb(12, 9, 43);
+    border-radius: 2px;
+
+    transition: 300ms;
+}
+
+.button:focus,
+.button:hover {
+    background-color: rgb(180, 196, 221);
+
+    box-shadow: 1px 2px 4px 2px rgba(48, 48, 48, 0.9);
+}
+
+.button__search {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 1px;
+    padding: 7px;
+}
+
+.button__search__icon {
+    fill: rgb(0, 0, 0);
+
+    transition: transform 300ms;
+}
+
+.button__search:focus .button__search__icon,
+.button__search:hover .button__search__icon {
+    transform: scale(1.2);
+}
+
+.button__load-more {
+    margin-top: 15px;
+    padding: 8px 20px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+
+    border-radius: 6px;
+}
+
+.button__load-more span {
+    display: block;
+
+    transition: 300ms;
+}
+
+.button__load-more:focus span,
+.button__load-more:hover span {
+    transform: scale(1.1);
+}
+
+
