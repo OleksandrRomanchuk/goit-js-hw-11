@@ -1,9 +1,8 @@
 import { refs } from './js/refs';
-import { optionsForService, paramsForRequest } from './js/optionsToFetch';
+import { optionsForService, paramsForRequest } from './js/optionsForFetch';
 import { fetchImages } from './js/fetchImages';
 import { Notify } from 'notiflix';
 import simpleLightbox from 'simplelightbox';
-import InfiniteScroll from 'infinite-scroll';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const { form, gallery, loadMoreBtn, endList } = refs;
@@ -23,11 +22,10 @@ function onFormSubmit(event) {
 
    toggelVisualyHidden(loadMoreBtn, 'add');
    toggelVisualyHidden(endList, 'add');
-   clearGallery(gallery);
+   cleanGallery(gallery);
 
    fetchImages(paramsForRequest)
       .then(response => {
-         console.log(response);
          checkResponseDataLength(response);
          renderGalleryItems(response.hits, gallery, createItemMarkup);
 
@@ -90,7 +88,7 @@ function createItemMarkup(data) {
             }
 
             return `<div class="${itemClass}">
-            <a class="photo-card" href="${largeImageURL}"  style="background-image:url(${webformatURL})">
+            <a class="photo-card" href="${largeImageURL}" data-alt="${tags}" style="background-image:url(${webformatURL})">
   <div class="info">
     <p class="info-item">
       <b>Likes</b> ${likes}
@@ -116,7 +114,7 @@ function renderGalleryItems(data, outputEl, markup) {
    outputEl.insertAdjacentHTML('beforeend', markup(data));
 }
 
-function clearGallery(outputEl) {
+function cleanGallery(outputEl) {
    outputEl.innerHTML = '';
 }
 
@@ -131,7 +129,7 @@ function onLoadMoreBtn(event) {
          }
 
          renderGalleryItems(response.hits, gallery, createItemMarkup);
-         scrollingdAfterMoreLoad();
+         scrollingAfterMoreLoad();
 
          lightbox.refresh();
 
@@ -163,7 +161,7 @@ function toggelVisualyHidden(element, action) {
    element.classList[action]('visually-hidden');
 }
 
-function scrollingdAfterMoreLoad() {
+function scrollingAfterMoreLoad() {
    const { height: cardHeight } = document
       .querySelector('.gallery')
       .firstElementChild.getBoundingClientRect();

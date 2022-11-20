@@ -3,7 +3,7 @@
     border: 1px solid rgb(12, 9, 43);
     border-radius: 2px;
 
-    transition: 300ms;
+    transition: box-shadow 300ms, background-color 300ms;
 }
 
 .button:focus,
@@ -47,7 +47,7 @@
 .button__load-more span {
     display: block;
 
-    transition: 300ms;
+    transition: transform 300ms;
 }
 
 .button__load-more:focus span,
