@@ -11,9 +11,6 @@ const lightbox = new SimpleLightbox('.gallery a');
 form.addEventListener('submit', onFormSubmit);
 loadMoreBtn.addEventListener('click', onLoadMoreBtn);
 
-toggelVisualyHidden(loadMoreBtn, 'add');
-toggelVisualyHidden(endList, 'add');
-
 function onFormSubmit(event) {
    event.preventDefault();
 
