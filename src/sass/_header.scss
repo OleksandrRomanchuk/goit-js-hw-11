@@ -2,6 +2,7 @@
     position: sticky;
     top: 0;
     left: 0;
+    width: 100v;
     background-color: #14071c;
     box-shadow: inset 0px -16px 67px -33px rgba(255, 255, 255, 0.28);
 
@@ -33,9 +34,12 @@
     outline: none;
 
     transition: 300ms;
+
+    &:focus,
+    &:hover {
+        background-color: rgb(255, 255, 255);
+    }
 }
 
-.search-form__input:focus, .search-form__input:hover {
-    background-color: rgb(255, 255, 255);
-}
+
 
