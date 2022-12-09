@@ -138,6 +138,10 @@
     @media screen and (max-width: 550px) {
         font-size: 8px;
     }
+
+    @media screen and (max-width: 550px) and (orientation: landscape) {
+        transform: translateX(-140px);
+    }
 }
 
 .gallery__list-end {
@@ -147,6 +151,6 @@
     font-weight: 500;
     line-height: 1;
     color: wheat;
-    
+
     text-align: center;
 }
