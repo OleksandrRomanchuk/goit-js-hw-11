@@ -139,8 +139,8 @@
         font-size: 8px;
     }
 
-    @media screen and (max-width: 550px) and (orientation: landscape) {
-        transform: translateX(-140px);
+    @media screen and (orientation: landscape) {
+        font-size: 8px;
     }
 }
 
